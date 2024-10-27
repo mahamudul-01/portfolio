@@ -2,7 +2,7 @@ import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Weight } from "lucide-react";
 import Header from "@/components/Header";
-
+import PageTransition from "@/components/PageTransition";
 // Corrected font import name and variable name casing
 const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700"], variable: '--font-jetbrainsMono' });
 
@@ -18,7 +18,10 @@ export default function RootLayout({ children }) {
         className={`${jetBrainsMono.variable} antialiased`}
       >
         <Header></Header>
+        <PageTransition>
         {children}
+        </PageTransition>
+        
       </body>
     </html>
   );
